@@ -34,12 +34,20 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #222,
+  background: #A3A9F6,
+  darkbackground: rgb(123, 127, 182),
+  secondary:  #1d813b,
+  danger:     #940000,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  deepdark:   #000
 );
+
+$toolbar-md-title-text-color: #A3A9F6;
+$toolbar-ios-title-text-color: #A3A9F6;
+$toolbar-wp-title-text-color: #A3A9F6;
+
 
 
 // App iOS Variables
@@ -63,12 +71,12 @@ $colors: (
 
 
 
-// App Theme
 // --------------------------------------------------
 // Ionic apps can have different themes applied, which can
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
+// App Theme
 
 @import "ionic.theme.default";
 

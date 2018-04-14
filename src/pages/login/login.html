@@ -1,0 +1,41 @@
+<!--
+ *  App developed for final modules in "Introduction to Mobile App
+ *  Design and Development" course @Laurea.
+ *  Author: Patricia Vera Hernández
+ *  Student number: 1106727
+-->
+
+<!-- Stay Safe's login page -->
+<ion-content class="bg-image no-scroll" style="background-color: #A3A9F6;" padding >
+  <!-- App logo -->
+  <h1 style="font-size: 60px; text-align: center; margin-top: 10%;"> Stay <br>   Safe. </h1>
+
+  <!-- Username and Password fields and labels -->
+  <div class="login-div">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-list class="list" inset>
+        
+        <ion-item class="label">
+          <ion-label color="dark" style="font-size:12px" stacked> Email </ion-label>
+          <ion-input color="dark" type="text" name="email" placeholder="Enter e-mail" [(ngModel)]="registerCredentials.email" required> </ion-input>
+        </ion-item>
+
+        <ion-item class="label">
+          <ion-label color="dark" style="font-size:12px" stacked> Password </ion-label>
+          <ion-input color="dark" type="password" name="password" placeholder="Enter password" [(ngModel)]="registerCredentials.password" required> </ion-input>
+        </ion-item>
+      
+      </ion-list>
+
+      <p class="text" style="font-family:Montserrat; font-size: 14px; color: #222;"> Forgot your password? </p>
+
+      <div text-center>
+        <button class="btnWidth" ion-button color="dark" type="submit" [disabled]="!registerForm.form.valid"> Login </button>
+      </div>
+
+      <div text-center>
+        <button class="myButton" ion-button color="dark" outline type="button" (click)="createAccount()"> Sign Up </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

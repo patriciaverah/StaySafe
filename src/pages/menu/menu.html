@@ -1,0 +1,41 @@
+<!--
+ *  App developed for the final modules in "Introduction to Mobile App
+ *  Design and Development" course @Laurea.
+ *  Author: Patricia Vera Hernández
+ *  Student number: 1106727
+-->
+
+<!--
+  Menu at the top-right part of the app.
+  Navigation from one page to another.
+-->
+<ion-menu [content]="content">
+  <ion-header>
+
+    <ion-navbar color="darkbackground">
+      <ion-title>Menu</ion-title>
+    </ion-navbar>
+
+  </ion-header>
+
+
+  <ion-content style="background-color: #000;">
+    <!-- Adding list -->
+    <ion-list>
+
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)" color="deepdark">
+        <ion-icon item-start [name]="p.icon" [color]="isActive(p)">
+        </ion-icon>
+        {{p.title}}
+      </button>
+
+      <button ion-item menuClose (click)="logoutClicked()" color="deepdark">
+        <ion-icon item-start [name]="remove-circle"> </ion-icon>
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Navigation code -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"> </ion-nav>

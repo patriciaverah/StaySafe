@@ -14,3 +14,29 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// This command defines font for the app
+@font-face {
+    font-family: Montserrat;
+    src: url('../assets/fonts/Montserrat-Regular.woff2') format("woff2");
+}
+
+// This command apply font for the qhole app (Globally)
+* {
+    font-family: Montserrat;
+}
+
+// This command defines font for the app
+@font-face {
+    font-family: BalooBhai;
+    src: url('../assets/fonts/BalooBhai-Regular.woff2') format("woff2");
+}
+
+// This command apply font for the whole app (Globally)
+* {
+    font-family: BalooBhai;
+}
+
+[scrollbar-y-auto] .scroll-content {
+    overflow-y: false !important;
+  }

@@ -1,0 +1,43 @@
+<!--
+ *  App developed for final modules in "Introduction to Mobile App
+ *  Design and Development" course @Laurea.
+ *  Author: Patricia Vera Hernández
+ *  Student number: 1106727
+-->
+
+<ion-header>
+  <ion-navbar color="deepdark">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon color="background" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Register incident</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: #A3A9F6;">
+  <div class="register-incident-div">
+    <form (ngSubmit)="newIncident()" #registerForm="ngForm">
+      <ion-list class="list" inset>
+        
+        <ion-item class="label">
+          <ion-label color="dark" style="font-size:12px" stacked> Title </ion-label>
+          <ion-input color="dark" type="text" name="email" placeholder="Enter title" [(ngModel)]="newItem.title" required> </ion-input>
+        </ion-item>
+
+        <ion-item class="label">
+          <ion-label color="dark" style="font-size:12px" stacked> Description </ion-label>
+          <ion-textarea color="dark" type="text" name="password" placeholder="Enter description of what happened" [(ngModel)]="newItem.description" required> </ion-textarea>
+        </ion-item>
+      
+      </ion-list>
+
+      <div text-center>
+        <button class="btnWidth" ion-button color="dark" type="submit" [disabled]="!registerForm.form.valid"> Add </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

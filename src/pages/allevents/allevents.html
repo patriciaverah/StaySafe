@@ -1,0 +1,54 @@
+<!--
+ *  App developed for final modules in "Introduction to Mobile App
+ *  Design and Development" course @Laurea.
+ *  Author: Patricia Vera Hernández
+ *  Student number: 1106727
+-->
+
+<ion-header>
+  <ion-navbar color="deepdark">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon color="background" name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>All events</ion-title>
+  </ion-navbar>
+
+  <!-- Segments dividing the page into two sections -->
+  <ion-toolbar color="darkbackground">
+    <ion-segment [(ngModel)]="events">
+      <ion-segment-button value="incidents">
+        Incidents
+      </ion-segment-button>
+      
+      <ion-segment-button value="safe places">
+        Safe places
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding scrollbar-y-auto style="background-color: #A3A9F6;">
+  <div [ngSwitch]="events">
+    <!-- List of registered incidents -->
+    <ion-list *ngSwitchCase="'incidents'">
+      <ion-item-sliding *ngFor="let item of arrIncidents; let i = item">
+        <ion-item>
+            {{ item.$value }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+
+    <!-- List of registered safe places -->
+    <ion-list *ngSwitchCase="'safe places'">
+      <ion-item-sliding *ngFor="let item of arrSafePlaces; let i = item">
+        <ion-item>
+            {{ item.$value }}
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

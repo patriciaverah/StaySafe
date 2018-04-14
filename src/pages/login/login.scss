@@ -1,0 +1,67 @@
+  /*
+   *  App developed for the final modules in "Introduction to Mobile App
+   *  Design and Development" course @Laurea.
+   *  Author: Patricia Vera Hernández
+   *  Student number: 1106727
+   */
+
+   page-login {
+
+    // Background image of the login screen
+    .bg-image {
+        background-image: url('assets/imgs/tallin.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    // Fixing the page with no scroll
+    .no-scroll .scroll-content {
+        overflow: hidden;
+    }
+
+    // Logo scale
+    .logo {
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-top: 2vh;
+    }
+
+    .label {
+        background-color: rgba(255, 255, 255, 0.0);
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .btnWidth {
+        width: 58%;
+    }
+
+    .myButton {
+        margin-top: 8vh;
+        width:74%;
+    }
+
+    .login-div {
+        margin-bottom: 8%;
+    }
+
+    .text-input:focus .text-input-md:focus {
+        color: black;
+    }
+
+    .text-input::-moz-placeholder {
+        color: rgba(100, 100, 100, 0.5);
+      }
+
+      .text-input:-ms-input-placeholder {
+        color: rgba(100, 100, 100, 0.5);
+      }
+
+      .text-input::-webkit-input-placeholder {
+        color: rgba(100, 100, 100, 0.5);
+      }
+}

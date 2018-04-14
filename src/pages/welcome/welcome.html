@@ -1,0 +1,40 @@
+<!--
+ *  App developed for the mid-term exam in "Introduction to Mobile App
+ *  Design and Development" course @Laurea.
+ *  Author: Patricia Vera Hernández
+ *  Student number: 1106727
+-->
+
+<ion-slides pager padding style="background-color: #000">
+  
+  <!-- This is the first slider -->
+  <ion-slide style="background-color: #000">
+      <ion-icon name="walk" style="zoom: 5.0;" color="background"></ion-icon>
+      <h1 style="color: #A3A9F6; font-family: BalooBhai;">Wondering what's the safest way back home?</h1>
+      <p style="font-family:Montserrat; font-size:18px; color:#A3A9F6">Stay Safe shows it to you!</p>
+  </ion-slide>
+
+  <!-- This is the second slider -->
+  <ion-slide style="background-color: #000">
+      <ion-icon name="happy" style="zoom: 5.0;" color="background"></ion-icon>
+      <h1 style="color: #A3A9F6">Take a look at what others have to say!</h1>
+      <p style="font-family:Montserrat; font-size:18px; color:#A3A9F6">People will warn you about places.</p>
+  </ion-slide>
+
+  <!-- This is the third slider -->
+  <ion-slide style="background-color: #000">
+      <ion-icon name="warning" style="zoom:5.0;" color="background"></ion-icon>
+      <h1 style="color: #A3A9F6">Seen some danger?</h1>
+      <p style="font-family:Montserrat; font-size:18px; color: #A3A9F6;">Update it in the app so everyone can know.</p>
+  </ion-slide>
+
+  <!-- This is the fourth - and last - slider -->
+  <ion-slide style="background-color: #000">
+      <h1 style="color: #A3A9F6">Want to have a look?</h1>
+      <!-- Button to continue -->
+      <div style="position: absolute; bottom: 120px; text-align: center; z-index: 1000; width: 100%">
+        <button ion-button color="background" [navPush]="nextPagee" style="font-size: 18px; color: #222;" (click)="goToLogin()"> Let's start! </button>
+      </div>
+  </ion-slide>
+
+</ion-slides>

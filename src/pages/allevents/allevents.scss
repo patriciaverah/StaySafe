@@ -1,0 +1,19 @@
+/*
+ *  App developed for the final modules in "Introduction to Mobile App
+ *  Design and Development" course @Laurea.
+ *  Author: Patricia Vera Hernández
+ *  Student number: 1106727
+ */
+
+page-allevents {
+
+    // Fixing the page with no scroll
+    .no-scroll .scroll-content {
+        overflow: hidden;
+    }
+
+    ::-webkit-scrollbar, *::-webkit-scrollbar {
+        display: none;
+    }
+
+}
