@@ -57,7 +57,7 @@ export class MenuPage {
     if (this.nav.getActiveChildNav() && page.index != undefined){
       this.nav.getActiveChildNav().select(page.index);
     }else{
-      this.nav.setRoot(page.pageName, params);
+      this.nav.push(page.pageName, params);
     }
 
   }
@@ -86,8 +86,9 @@ export class MenuPage {
     .then(data => {
       // user is logged out
       // we set login as root
-        //const root = this.app.getRootNavById('');
-        //root.popToRoot();
+      
+      console.log(this.fire.auth.currentUser);
+      //this.navCtrl.push('LoginPage');
     })
     .catch(error => {
       // there has been an error, so we show it

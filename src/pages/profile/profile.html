@@ -15,9 +15,90 @@
 
     <ion-title>My profile</ion-title>
   </ion-navbar>
+
+  <!-- Segments dividing the page into two sections -->
+  <ion-toolbar color="darkbackground">
+    <ion-segment [(ngModel)]="events">
+      <ion-segment-button value="profile">
+        Profile
+      </ion-segment-button>
+
+      <ion-segment-button value="incidents">
+        Incidents
+      </ion-segment-button>
+      
+      <ion-segment-button value="safe places">
+        Safe places
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
+<!-- 
+  *   In this page the user can look at the incidents and safe places
+  *   that he/she has posted on the app. 
+  *   He/she can also edit them or delete them completly from the 
+  *   database, and even just watch the even complete description. 
+   -->
 
-<ion-content padding style="background-color: #A3A9F6;">
+   <ion-content padding scrollbar-y-auto style="background-color: #A3A9F6;">
+    <div [ngSwitch]="events">
+      <!-- Profile page view -->
+      <div *ngSwitchCase="'profile'">
+        <ion-icon class="profile-icon" style="zoom: 5.0;" color="primary" name="person">  </ion-icon>
+        <p style="font-family: Montserrat; text-align: center; margin-bottom: 20%;"> {{user.email}} </p>
+      
+        <h6 style="font-family: Montserrat"> <b>Incidents registered:</b> {{nIncidents}} </h6>
+      
+        <h6 style="font-family: Montserrat"> <b>Safe places registered:</b> {{nSafePlaces}} </h6>
+      </div>
 
-</ion-content>
+      <!-- List of registered incidents -->
+      <ion-list *ngSwitchCase="'incidents'">
+        <ion-item-sliding *ngFor="let item of arrIncidents; let i = item">
+          <ion-item style="background-color: #A3A9F6;" (click)="selectIncident(item)">
+            <h2 style="font-family:Montserrat;"> {{item.title}}</h2>
+            <p style="font-family:Montserrat;"> {{item.description}} </p>
+          </ion-item>
+          
+          <!-- Removing item from the database button -->
+          <ion-item-options side="right">
+            <button ion-button color="danger" icon-only (click)="presentConfirmIncident(item)">
+              <ion-icon name="trash"> </ion-icon>
+            </button>
+          </ion-item-options>
+          
+          <!-- Editing item button -->
+          <ion-item-options side="left">
+            <button ion-button color="secondary" icon-only (click)="editIncident(item.$key)">
+              <ion-icon name="construct"> </ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+  
+      <!-- List of registered safe places -->
+      <ion-list *ngSwitchCase="'safe places'">
+        <ion-item-sliding *ngFor="let item of arrSafePlaces; let i = item">
+          <ion-item style="background-color: #A3A9F6;" (click)="selectSafePlace(item)">
+            <h2 style="font-family:Montserrat;"> {{item.title}}</h2>
+            <p style="font-family:Montserrat;"> {{item.description}} </p>
+          </ion-item>
+
+          <!-- Removing item from the database button -->
+          <ion-item-options side="right">
+            <button ion-button color="danger" icon-only (click)="presentConfirmSafePlace(item)">
+              <ion-icon name="trash"> </ion-icon>
+            </button>
+          </ion-item-options>
+
+          <!-- Editing item button -->
+          <ion-item-options side="left">
+            <button ion-button color="secondary" icon-only (click)="editSafePlace(item.$key)">
+              <ion-icon name="construct"> </ion-icon>
+            </button>
+          </ion-item-options> 
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+  </ion-content>

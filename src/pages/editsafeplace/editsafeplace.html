@@ -13,35 +13,35 @@
       </button>
     </ion-buttons>
 
-    <ion-title>Register incident</ion-title>
+    <ion-title> Edit Safe Place </ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding style="background-color: #A3A9F6;">
-  <div class="register-incident-div">
-    <form (ngSubmit)="newIncident()" #registerForm="ngForm">
+  <div class="edit-incident-div">
+    <form (ngSubmit)="editSafePlace()" #registerForm="ngForm">
       <ion-list class="list" inset>
         
         <ion-item class="label">
           <ion-label color="dark" style="font-size:12px" stacked> Title </ion-label>
-          <ion-input color="dark" type="text" name="email" placeholder="Enter title" [(ngModel)]="newItem.eventTitle" required> </ion-input>
+          <ion-input color="dark" type="text" name="email" [placeholder]="incident.title" [(ngModel)]="newItem.eventTitle" required> </ion-input>
         </ion-item>
 
         <ion-item class="label">
           <ion-label color="dark" style="font-size:12px" stacked> Description </ion-label>
-          <ion-textarea color="dark" type="text" name="password" placeholder="Enter description of what happened" [(ngModel)]="newItem.eventDescription" required> </ion-textarea>
+          <ion-textarea color="dark" type="text" name="password" [placeholder]="incident.description" [(ngModel)]="newItem.eventDescription" required> </ion-textarea>
         </ion-item>
       
         <ion-item class="label">
           <ion-label color="dark" style="font-size:12px" stacked> Location </ion-label>
-          <ion-textarea color="dark" type="text" name="password" placeholder="Enter location where incident happened" [(ngModel)]="newItem.eventLocation" required> </ion-textarea>
+          <ion-textarea color="dark" type="text" name="password" [placeholder]="incident.location" [(ngModel)]="newItem.eventLocation" required> </ion-textarea>
         </ion-item>
 
       </ion-list>
 
       <div text-center>
-        <button class="btnWidth" ion-button color="dark" type="submit" [disabled]="!registerForm.form.valid"> Add </button>
+        <button class="btnWidth" ion-button color="dark" type="submit" [disabled]="!registerForm.form.valid"> Edit </button>
       </div>
     </form>
   </div>

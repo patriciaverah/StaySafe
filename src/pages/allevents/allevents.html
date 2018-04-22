@@ -35,20 +35,18 @@
   <div [ngSwitch]="events">
     <!-- List of registered incidents -->
     <ion-list *ngSwitchCase="'incidents'">
-      <ion-item-sliding *ngFor="let item of arrIncidents; let i = item">
-        <ion-item>
-            {{ item.$value }}
-        </ion-item>
-      </ion-item-sliding>
+      <ion-item *ngFor="let item of arrIncidents; let i = item" style="background-color: #A3A9F6;" (click)="selectIncident(item)">
+        <h2 style="font-family:Montserrat;"> {{item.title}}</h2>
+        <p style="font-family:Montserrat;"> {{item.description}} </p>
+      </ion-item>
     </ion-list>
 
     <!-- List of registered safe places -->
     <ion-list *ngSwitchCase="'safe places'">
-      <ion-item-sliding *ngFor="let item of arrSafePlaces; let i = item">
-        <ion-item>
-            {{ item.$value }}
-        </ion-item>
-      </ion-item-sliding>
+      <ion-item *ngFor="let item of arrSafePlaces; let i = item" style="background-color: #A3A9F6;" (click)="selectSafePlace(item)">
+        <h2 style="font-family:Montserrat;"> {{item.title}}</h2>
+        <p style="font-family:Montserrat;"> {{item.description}} </p>
+      </ion-item>
     </ion-list>
   </div>
 </ion-content>

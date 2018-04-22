@@ -17,6 +17,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { MenuPage } from '../pages/menu/menu';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
+import { EditincidentPage } from '../pages/editincident/editincident';
+import { EditsafeplacePage } from '../pages/editsafeplace/editsafeplace';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA3yeSvjR4M6wMRkKHPvR-hPBRdEDtP3wE",
@@ -32,7 +34,8 @@ const firebaseConfig = {
     MyApp,
     MenuPage,
     WelcomePage,
-    LoginPage,
+    EditincidentPage,
+    EditsafeplacePage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ const firebaseConfig = {
     MyApp,
     MenuPage,
     WelcomePage,
-    LoginPage,
+    EditincidentPage,
+    EditsafeplacePage
   ],
   providers: [
     StatusBar,

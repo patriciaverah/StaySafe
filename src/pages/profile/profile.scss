@@ -3,13 +3,21 @@
  *  Design and Development" course @Laurea.
  *  Author: Patricia Vera Hernández
  *  Student number: 1106727
- */s
+ */
 
 page-profile {
 
     // Fixing the page with no scroll
     .no-scroll .scroll-content {
         overflow: hidden;
+    }
+
+    .profile-icon {
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-top: 5%;
+        text-align: center;
     }
 
 }

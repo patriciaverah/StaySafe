@@ -6,7 +6,7 @@
 -->
 
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="deepdark">
     <ion-buttons start>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
@@ -18,6 +18,18 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding scrollbar-y-auto style="background-color: #A3A9F6;">
+
+  <h1 style="text-align: center; margin: 10%;"> {{eventSelected.title}} </h1>
+
+  <h6 style="font-family: Montserrat"> <b>Event type:</b> <br> {{eventType}} </h6>
+
+  <h6 style="font-family: Montserrat"> <b>Event description:</b> <br> {{eventSelected.description}} </h6>
+
+  <h6 style="font-family: Montserrat"> <b>Event date:</b> <br> {{eventSelected.date | date: 'dd/MM/yyyy HH:mm'}} </h6>
+
+  <h6 style="font-family: Montserrat"> <b>Event location:</b> <br> {{eventSelected.location}} </h6>
+
+  <h6 style="font-family: Montserrat"> <b> User who posted the event: </b> <br> {{eventSelected.author}} </h6>
 
 </ion-content>

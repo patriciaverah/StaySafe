@@ -10,7 +10,8 @@ import { IonicPage, AlertController, NavController, NavParams } from 'ionic-angu
 
 import { AngularFireDatabase }  from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { FirebaseProvider } from './../../providers/firebase/firebase'
+import { FirebaseProvider } from './../../providers/firebase/firebase';
+import { event } from '../../models/events/events.interface';
 
 @IonicPage()
 @Component({
@@ -20,12 +21,14 @@ import { FirebaseProvider } from './../../providers/firebase/firebase'
 export class SafePage {
 
   // New event structure
-  newItem = {title: '', description: ''};
-  currentUser;
+  newItem = {} as event;
 
   constructor(private fire: AngularFireAuth, public fbp: FirebaseProvider, private alertCtrl: AlertController, public navCtrl: NavController, private fdb: AngularFireDatabase) {
     // Get the user logged in to save in with the event info
-    this.currentUser = fire.auth.currentUser;
+    this.newItem.eventAuthor = fire.auth.currentUser;
+
+    // Get today's date
+    this.newItem.eventDate = new Date().toISOString();
   }
 
   ionViewDidLoad() {
@@ -33,7 +36,8 @@ export class SafePage {
   }
 
   newSafePlace(){
-    this.fbp.addSafePlace(this.newItem, this.currentUser.email);
+    this.fbp.addSafePlace(this.newItem);
+    this.navCtrl.pop();
   }
 
 }
