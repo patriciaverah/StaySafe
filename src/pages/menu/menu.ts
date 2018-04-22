@@ -88,7 +88,7 @@ export class MenuPage {
       // we set login as root
       
       console.log(this.fire.auth.currentUser);
-      //this.navCtrl.push('LoginPage');
+      this.navCtrl.push('LoginPage');
     })
     .catch(error => {
       // there has been an error, so we show it
